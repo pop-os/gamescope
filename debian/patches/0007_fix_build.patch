@@ -1,0 +1,35 @@
+Description: fixing build error
+Author: Safir Secerovic <sapphire@linux.org.ba>
+Forwarded: not-needed
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -12,6 +12,7 @@
+ 
+ drm_dep = dependency('libdrm', version: '>= 2.4.113', required: get_option('drm_backend'))
+ eis_dep = dependency('libeis-1.0', required : get_option('input_emulation'))
++pixman_dep = dependency('pixman-1')
+ 
+ wayland_server = dependency('wayland-server', version: '>=1.21')
+ wayland_protos = dependency('wayland-protocols', version: '>=1.17')
+@@ -172,12 +173,7 @@
+ compiler_name = cc.get_id()
+ compiler_version = cc.version()
+ 
+-vcs_tag_cmd = ['git', 'describe', '--always', '--tags', '--dirty=+']
+-vcs_tag = run_command(vcs_tag_cmd, check: false).stdout().strip()
+-version_tag = vcs_tag + ' (' + compiler_name + ' ' + compiler_version + ')'
+-
+ gamescope_version_conf = configuration_data()
+-gamescope_version_conf.set('VCS_TAG', version_tag)
+ 
+ gamescope_version = configure_file(
+   input : 'GamescopeVersion.h.in',
+@@ -195,7 +191,7 @@
+       xkbcommon, thread_dep, sdl2_dep, wlroots_dep,
+       vulkan_dep, liftoff_dep, dep_xtst, dep_xmu, cap_dep, epoll_dep, pipewire_dep, librt_dep,
+       stb_dep, displayinfo_dep, openvr_dep, dep_xcursor, avif_dep, dep_xi,
+-      libdecor_dep, eis_dep, luajit_dep
++      libdecor_dep, eis_dep, luajit_dep, pixman_dep
+     ],
+     install: true,
+     cpp_args: gamescope_cpp_args,

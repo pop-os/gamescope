@@ -1,0 +1,125 @@
+gamescope (3.16.2-0pop1) noble; urgency=medium
+
+  * Package for Pop!_OS
+
+ -- Michael Aaron Murphy <michael@mmurphy.dev>  Wed, 12 Mar 2025 18:21:05 +0100
+
+gamescope (3.16.1-1) unstable; urgency=medium
+
+  * Team Upload
+  * New upstream version 3.16.1
+  * Refresh patches
+  * Add build-dep on libluajit-5.1-dev
+    -> this means no more support for ppc64el
+  * Sort the huge list of dependecies with debputy
+
+  [ Phil Morrell ]
+  * Use canonical team address
+
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 09 Feb 2025 13:34:00 +0100
+
+gamescope (3.15.13-2) unstable; urgency=medium
+
+  * Add seatd dependency into debian/control as mentioned in -1
+  * Add pipewire-audio to Suggests for gamescope binary
+
+ -- Safir Secerovic <sapphire@linux.org.ba>  Sun, 20 Oct 2024 07:20:46 -0600
+
+gamescope (3.15.13-1) unstable; urgency=medium
+
+  * New upstream version 3.15.13 (closes: bug#1058493, bug#1074130)
+  * Updated Standards-Version: 4.7.0 - no changes required
+  * Added seatd to Recommends section for gamescope binary package
+
+ -- Safir Secerovic <sapphire@linux.org.ba>  Sat, 19 Oct 2024 08:41:25 -0600
+
+gamescope (3.15.3-1) experimental; urgency=medium
+
+  * New upstream version 3.15.3
+  * Upload to experimental due to libwlroots-0.18-dev (>= 0.18.0)
+    being in experimental
+  * Rebased 0001_remove-forcefallback.patch,
+            0002_remove-forced-versions.patch
+  * Added spirv-headers to the build-deps
+  * Added 0004_use_system_spirv_headers.patch
+  * Added 0005_add_reshade_696b14c.patch,
+          0006_use_system_wlroots-0.18-headers.patch,
+          0007_fix_build.patch
+  * Added versioned build dependencies for:
+    - libwlroots-0.18-dev (>= 0.18.0)
+    - vkroots-headers (= 0~202404300106git5106d8a)
+  * Disabled OpenVR support since it depends on OpenVR library version 2.x.x
+    not in Debian yet, removed libopenvr-dev from build dependencies
+  * Modified build-dep from pkg-config to pkgconf
+  * Added: libeis-dev, libxcb-errors-dev, libx11-xcb-dev, libpixman-1-dev,
+           libseat-dev, libinput-dev, xwayland, libxcb-composite0-dev, 
+           libxcb-ewmh-dev, libxcb-icccm4-dev, libxcb-res0-dev,
+           libxcb-xfixes0-dev, libxcb-xinput-dev, libxcb-render-util0-dev,
+           libxcb-composite0-dev, libxcb-dri3-dev, libxcb-image0-dev,
+           libxcb-present-dev, libxcb-render0-dev, libxcb-render-util0-dev,
+           libxcb-shm0-dev, cmake, libavif-dev to build dependencies
+
+ -- Safir Secerovic <sapphire@linux.org.ba>  Fri, 30 Aug 2024 22:24:23 -0600
+
+gamescope (3.12.5-1) unstable; urgency=medium
+
+  * New upstream version 3.12.5
+
+ -- Safir Secerovic <sapphire@linux.org.ba>  Tue, 26 Sep 2023 13:28:16 -0600
+
+gamescope (3.12.3-1) unstable; urgency=medium
+
+  [ Safir Secerovic ]
+  * New upstream version 3.12.3
+  * Added libopenvr-dev, libglm-dev, libxmu-dev,
+    libdisplay-info-dev, libbenchmark-dev
+    to the build dependencies list
+  * Changed package Section from games to contrib/games
+    due to new libopenvr-dev build dependency in contrib
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Wed, 23 Aug 2023 12:39:54 +0200
+
+gamescope (3.11.51-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Sun, 06 Aug 2023 11:38:08 +0200
+
+gamescope (3.11.51-1) experimental; urgency=medium
+
+  * New upstream version 3.11.51
+  * Update to new upstream URL
+  * Upload to experimental due to wlroots 0.16.0
+  * Fix compilation with GCC-13 (Closes: #1037668)
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Fri, 21 Jul 2023 00:19:19 +0200
+
+gamescope (3.11.49-1) unstable; urgency=medium
+
+  * New upstream version 3.11.49
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Sun, 22 Jan 2023 15:42:36 +0100
+
+gamescope (3.11.45-1) unstable; urgency=medium
+
+  * New upstream version 3.11.45
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Sun, 25 Sep 2022 21:13:51 +0200
+
+gamescope (3.11.39-1) unstable; urgency=medium
+
+  * New upstream version 3.11.39
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Mon, 22 Aug 2022 11:38:53 +0200
+
+gamescope (3.11.32-2) unstable; urgency=medium
+
+  * Fix debian/watch
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Fri, 05 Aug 2022 10:28:35 +0200
+
+gamescope (3.11.32-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #989085)
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Mon, 25 Jul 2022 13:48:23 +0200

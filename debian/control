@@ -1,0 +1,89 @@
+Source: gamescope
+Section: contrib/games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders:
+ Stephan Lachnit <stephanlachnit@debian.org>,
+ Safir Secerovic <sapphire@linux.org.ba>,
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ git,
+ glslang-tools,
+ hwdata,
+ libavif-dev,
+ libbenchmark-dev,
+ libcap-dev,
+ libdisplay-info-dev,
+ libdrm-dev,
+ libeis-dev,
+ libglm-dev,
+ libinput-dev,
+ libluajit-5.1-dev,
+ libpipewire-0.3-dev,
+ libpixman-1-dev,
+ libsdl2-dev,
+ libseat-dev,
+ libstb-dev,
+ libvulkan-dev,
+ libwayland-dev,
+ libx11-dev,
+ libx11-xcb-dev,
+ libxcb-composite0-dev,
+ libxcb-composite0-dev,
+ libxcb-dri3-dev,
+# libxcb-errors-dev,
+ libxcb-ewmh-dev,
+ libxcb-icccm4-dev,
+ libxcb-image0-dev,
+ libxcb-present-dev,
+ libxcb-render-util0-dev,
+ libxcb-render-util0-dev,
+ libxcb-render0-dev,
+ libxcb-res0-dev,
+ libxcb-shm0-dev,
+ libxcb-xfixes0-dev,
+ libxcb-xinput-dev,
+ libxcb1-dev,
+ libxcomposite-dev,
+ libxdamage-dev,
+ libxext-dev,
+ libxfixes-dev,
+ libxkbcommon-dev,
+ libxmu-dev,
+ libxrender-dev,
+ libxres-dev,
+ libxtst-dev,
+ libxxf86vm-dev,
+ meson-1.5,
+ pkgconf,
+ spirv-headers,
+ wayland-protocols,
+ xwayland,
+Standards-Version: 4.7.0
+Homepage: https://github.com/Plagman/gamescope
+Vcs-Browser: https://salsa.debian.org/games-team/gamescope
+Vcs-Git: https://salsa.debian.org/games-team/gamescope.git
+X-Style: black
+
+Package: gamescope
+Architecture: amd64 arm64
+Depends:
+ xwayland,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ seatd,
+Suggests:
+ libcap2-bin,
+ pipewire-audio,
+Description: Micro-compositor for game scaling
+ Gamescope wraps your games to give them scaling and fullscreen options. It
+ provides a Wayland compositor to your games, but gamescope runs under both
+ Wayland and X.org.
+ .
+ Your game sees a virtual display at the resolution you specified. You see a
+ scaled view in a window or fullscreen. This is useful when either the game or
+ your system do not permit running the game at native window/screen sizes. You
+ can also use integer scaling to keep your pixels sharp and pixelated.

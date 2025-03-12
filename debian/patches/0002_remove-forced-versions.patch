@@ -1,0 +1,32 @@
+Description: Remove forced versions in meson.build
+Author: Stephan Lachnit <stephanlachnit@debian.org>
+Forwarded: not-needed
+
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -26,14 +26,14 @@
+ 
+ wlroots_dep = dependency(
+   'wlroots',
+-  version: ['>= 0.18.0', '< 0.19.0'],
++  version: ['>= 0.18.0'],
+   fallback: ['wlroots', 'wlroots'],
+   default_options: ['default_library=static', 'examples=false', 'xwayland=enabled', 'backends=libinput', 'renderers=[]', 'allocators=[]', 'session=enabled'],
+ )
+ 
+ displayinfo_dep = dependency(
+   'libdisplay-info',
+-  version: ['>= 0.0.0', '< 0.3.0'],
++  version: ['>= 0.0.0'],
+   fallback: ['libdisplay-info', 'di_dep'],
+   default_options: ['default_library=static'],
+ )
+@@ -130,7 +130,7 @@
+   required_wlroots_features += 'libinput_backend'
+   liftoff_dep = dependency(
+     'libliftoff',
+-    version: ['>= 0.5.0', '< 0.6.0'],
++    version: ['>= 0.5.0'],
+     fallback: ['libliftoff', 'liftoff'],
+     default_options: ['default_library=static'],
+   )

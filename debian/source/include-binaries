@@ -1,0 +1,10 @@
+src/reshade/res/main_icon.ico
+src/reshade/res/main_icon_small.png
+src/reshade/res/shaders/imgui_ps.spv
+src/reshade/res/shaders/imgui_ps_hdr.spv
+src/reshade/res/shaders/imgui_vs.spv
+src/reshade/setup/Pages/Resources/DirectX.png
+src/reshade/setup/Pages/Resources/OpenGL.png
+src/reshade/setup/Pages/Resources/OpenXR.png
+src/reshade/setup/Pages/Resources/Vulkan.png
+src/reshade/tools/7za.exe

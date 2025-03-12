@@ -1,0 +1,17 @@
+Description: This patch modifies src/meson.build
+ In order to enable building with system installed spriv-headers
+Author: Safir Secerovic <sapphire@linux.org.ba>
+Origin: other
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -87,7 +87,7 @@
+ reshade_include = include_directories([
+   'reshade/source',
+   'reshade/include',
+-  '../thirdparty/SPIRV-Headers/include/spirv/unified1'
++  '/usr/include/spirv/unified1'
+ ])
+ 
+ sol2_include = include_directories(['../thirdparty'])

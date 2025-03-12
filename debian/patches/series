@@ -1,0 +1,7 @@
+0001_remove-forcefallback.patch
+0002_remove-forced-versions.patch
+0003_make_layer_lib_private.patch
+#0004_use_system_spirv_headers.patch
+#0005_add_reshade_696b14c.patch
+#0006_use_system_wlroots-0.18-headers.patch
+#0007_fix_build.patch
